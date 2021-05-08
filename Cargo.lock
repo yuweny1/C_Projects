@@ -191,3 +191,39 @@ name = "deep_learning_playground"
 version = "0.1.0"
 dependencies = [
  "byteorder",
+ "bytes",
+ "failure",
+ "futures",
+ "futures-util",
+ "image",
+ "libflate",
+ "ndarray",
+ "ndarray-stats",
+ "num",
+ "numpy",
+ "pyo3",
+ "quote",
+ "reqwest",
+ "rust-crypto",
+ "tokio",
+]
+
+[[package]]
+name = "deflate"
+version = "0.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "050ef6de42a33903b30a7497b76b40d3d58691d4d3eec355348c122444a388f0"
+dependencies = [
+ "adler32",
+ "byteorder",
+]
+
+[[package]]
+name = "dtoa"
+version = "0.4.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4358a9e11b9a09cf52383b451b49a169e8d797b68aa02301ff586d70d9661ea3"
+
+[[package]]
+name = "either"
+version = "1.5.3"
