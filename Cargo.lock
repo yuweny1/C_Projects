@@ -766,3 +766,52 @@ name = "miniz_oxide"
 version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aa679ff6578b1cddee93d7e82e263b94a575e0bfced07284eb0c037c1d2416a5"
+dependencies = [
+ "adler32",
+]
+
+[[package]]
+name = "mio"
+version = "0.6.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "302dec22bcf6bae6dfb69c647187f4b4d0fb6f535521f7bc022430ce8e12008f"
+dependencies = [
+ "cfg-if",
+ "fuchsia-zircon",
+ "fuchsia-zircon-sys",
+ "iovec",
+ "kernel32-sys",
+ "libc",
+ "log",
+ "miow 0.2.1",
+ "net2",
+ "slab",
+ "winapi 0.2.8",
+]
+
+[[package]]
+name = "mio-named-pipes"
+version = "0.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f5e374eff525ce1c5b7687c4cef63943e7686524a387933ad27ca7ec43779cb3"
+dependencies = [
+ "log",
+ "mio",
+ "miow 0.3.3",
+ "winapi 0.3.8",
+]
+
+[[package]]
+name = "mio-uds"
+version = "0.6.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "966257a94e196b11bb43aca423754d87429960a768de9414f3691d6957abf125"
+dependencies = [
+ "iovec",
+ "libc",
+ "mio",
+]
+
+[[package]]
+name = "miow"
+version = "0.2.1"
