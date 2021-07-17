@@ -1,3 +1,3 @@
 # deep-learning-playground.rs
 
-[![Build Sta
+[![Build Status](https://travis-ci.org/falgon/deep-lea
