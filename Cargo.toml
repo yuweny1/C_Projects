@@ -1,0 +1,27 @@
+
+[package]
+name = "deep_learning_playground"
+version = "0.1.0"
+authors = ["roki <falgon53@yahoo.co.jp>"]
+edition = "2018"
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--html-in-header", ".assets/katex-header.html"]
+
+[dependencies]
+num = "0.2.1"
+ndarray = "0.13.0"
+ndarray-stats = "0.3"
+quote = "1.0.2"
+failure = "0.1.6"
+reqwest = "0.10"
+tokio = { version = "0.2", features = ["full"] }
+futures = "0.3"
+bytes = "0.5"
+libflate = "0.1"
+byteorder = "1.3"
+futures-util = "0.3.4"
+rust-crypto = "0.2"
+image = "0.23.1"
+pyo3 = "0.8"
+numpy = "0.7.0"
