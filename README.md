@@ -5,4 +5,4 @@
 ## TL;DR
 
 My playground about deep learning by Rust.
-This repository is a 
+This repository is a place for me to play deep learning with ref
