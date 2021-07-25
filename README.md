@@ -4,4 +4,5 @@
 
 ## TL;DR
 
-My playground about deep
+My playground about deep learning by Rust.
+This repository is a 
