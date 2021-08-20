@@ -9,4 +9,6 @@ This repository is a place for me to play deep learning with reference to the fo
 
 * 斎藤 康毅. (2016). _ゼロから作るDeep Learning ―Pythonで学ぶディープラーニングの理論と実装_. オライリージャパン
 
-## Documents of imple
+## Documents of implementations
+
+The implementation descri
