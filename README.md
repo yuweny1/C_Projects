@@ -7,4 +7,4 @@
 My playground about deep learning by Rust.
 This repository is a place for me to play deep learning with reference to the following book.
 
-* 斎藤 康毅. (2016). _ゼロから作るD
+* 斎藤 康毅. (2016). _ゼロから作るDeep Learning ―Pythonで学ぶディープラーニングの理
