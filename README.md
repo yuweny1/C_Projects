@@ -11,4 +11,4 @@ This repository is a place for me to play deep learning with reference to the fo
 
 ## Documents of implementations
 
-The implementation descri
+The implementation description is available in [here](https://falgon.gi
