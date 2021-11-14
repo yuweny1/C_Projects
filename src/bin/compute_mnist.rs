@@ -4,4 +4,5 @@ use deep_learning_playground::setup::mnist::{batched, load_data, test_dataset, B
 use deep_learning_playground::utils::natural_transform::to_io;
 use std::env;
 use std::io;
-use
+use std::time::{Duration, Instant};
+use 
