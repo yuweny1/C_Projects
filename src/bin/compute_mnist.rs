@@ -5,4 +5,6 @@ use deep_learning_playground::utils::natural_transform::to_io;
 use std::env;
 use std::io;
 use std::time::{Duration, Instant};
-use 
+use std::vec::Vec;
+
+fn compute(td: Batched, trained_d
