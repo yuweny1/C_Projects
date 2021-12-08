@@ -9,4 +9,6 @@ use std::vec::Vec;
 
 fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     let mut nn = to_io(
-        neural_network::NeuralNetwork::<f64>::new(td.
+        neural_network::NeuralNetwork::<f64>::new(td.images),
+        io::ErrorKind::Other,
+  
