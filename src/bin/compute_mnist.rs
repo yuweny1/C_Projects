@@ -15,4 +15,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     let mut afunc = vec![];
     for _ in 1..trained_data.bias.len() {
         afunc.push(activate_functions::sigmoid());
-  
+    }
+    afunc.push(activate_functions
