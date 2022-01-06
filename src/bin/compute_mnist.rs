@@ -16,4 +16,6 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     for _ in 1..trained_data.bias.len() {
         afunc.push(activate_functions::sigmoid());
     }
-    afunc.push(activate_functions
+    afunc.push(activate_functions::softmax());
+
+    for ((w, b), 
