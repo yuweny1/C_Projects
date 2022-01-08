@@ -18,4 +18,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     }
     afunc.push(activate_functions::softmax());
 
-    for ((w, b), 
+    for ((w, b), af) in trained_data
+        .weigh
