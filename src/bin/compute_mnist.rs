@@ -21,4 +21,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     for ((w, b), af) in trained_data
         .weight
         .iter()
-        .zip(tr
+        .zip(trained_data.bias.iter())
+        .zip(afunc.
