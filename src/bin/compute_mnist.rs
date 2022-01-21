@@ -24,4 +24,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
         .zip(trained_data.bias.iter())
         .zip(afunc.iter())
     {
-        nn.next(&w.map(|x
+        nn.next(&w.map(|x| *x as f64), &b.map(|x| *x as f64), &af);
+    }
