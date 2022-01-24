@@ -32,4 +32,7 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
         .iter()
         .zip(nn.argmax().iter())
         .map(|(l, r)| (*l as u32 == *r as u32) as u32)
- 
+        .sum())
+}
+
+fn execute(bsize: usi
