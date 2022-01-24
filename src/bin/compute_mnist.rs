@@ -38,4 +38,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
 fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
     let data = load_data(test_dataset(), true)?;
     let len = data.len();
-    let data
+    let data = batched(data, bsize)?;
+    let trained_data
