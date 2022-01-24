@@ -30,4 +30,5 @@ fn compute(td: Batched, trained_data: &chap3::Chap3Param) -> io::Result<u32> {
     Ok(td
         .labels
         .iter()
-      
+        .zip(nn.argmax().iter())
+        .map(|(l, r)| (*l as
