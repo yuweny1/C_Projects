@@ -41,4 +41,5 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
     let data = batched(data, bsize)?;
     let trained_data = chap3::load_trained_params()?;
         
-    println!("Loading success:\n\t* MNIST data
+    println!("Loading success:\n\t* MNIST dataset (size: {})\n\t* trained params", len);
+
