@@ -43,3 +43,6 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
         
     println!("Loading success:\n\t* MNIST dataset (size: {})\n\t* trained params", len);
 
+    let mut accuracy_cnt: u32 = 0;
+
+    println!(
