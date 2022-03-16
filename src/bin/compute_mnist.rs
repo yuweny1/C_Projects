@@ -46,4 +46,6 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
     let mut accuracy_cnt: u32 = 0;
 
     println!("Start computing...");
-    let start
+    let start_time = Instant::now();
+
+    for td in data.into_i
