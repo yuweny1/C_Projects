@@ -45,4 +45,5 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
 
     let mut accuracy_cnt: u32 = 0;
 
-    println!(
+    println!("Start computing...");
+    let start
