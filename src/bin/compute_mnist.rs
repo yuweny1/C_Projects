@@ -49,4 +49,6 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
     let start_time = Instant::now();
 
     for td in data.into_iter() {
-        accuracy_cnt += compute(td, &train
+        accuracy_cnt += compute(td, &trained_data)?;
+    }
+    Ok((accuracy
