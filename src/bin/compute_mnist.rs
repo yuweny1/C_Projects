@@ -51,4 +51,4 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
     for td in data.into_iter() {
         accuracy_cnt += compute(td, &trained_data)?;
     }
-    Ok((accuracy
+    Ok((accuracy_cnt as f64 / len as f64, start_time.elap
