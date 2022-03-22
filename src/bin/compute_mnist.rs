@@ -55,4 +55,4 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
 }
 
 fn main() {
-    let args
+    let args: Vec<String> = env::args().collect()
