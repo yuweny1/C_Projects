@@ -57,3 +57,6 @@ fn execute(bsize: usize) -> io::Result<(f64, Duration)> {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let mut batch_size = 100;
+
+    if args.len() != 1 {
+        match args[1].
