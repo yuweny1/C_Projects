@@ -59,4 +59,5 @@ fn main() {
     let mut batch_size = 100;
 
     if args.len() != 1 {
-        match args[1].
+        match args[1].parse::<usize>() {
+            Err(e) => epri
