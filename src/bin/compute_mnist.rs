@@ -61,4 +61,5 @@ fn main() {
     if args.len() != 1 {
         match args[1].parse::<usize>() {
             Err(e) => eprintln!("{}", e.to_string()),
-           
+            Ok(i) => batch_size = i,
+     
