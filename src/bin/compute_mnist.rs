@@ -67,4 +67,5 @@ fn main() {
 
     match execute(batch_size) {
         Err(e) => eprintln!("{}", e),
-    
+        Ok((s, pt)) => println!(
+          
