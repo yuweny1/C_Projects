@@ -70,4 +70,5 @@ fn main() {
         Ok((s, pt)) => println!(
             "Accuracy: {}%, Process time: {}.{:03} seconds",
             s * 100.,
-  
+            pt.as_secs(),
+            pt.s
