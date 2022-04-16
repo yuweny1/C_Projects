@@ -71,4 +71,5 @@ fn main() {
             "Accuracy: {}%, Process time: {}.{:03} seconds",
             s * 100.,
             pt.as_secs(),
-            pt.s
+            pt.subsec_nanos() / 1_000_000
+        )
