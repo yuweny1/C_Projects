@@ -72,4 +72,6 @@ fn main() {
             s * 100.,
             pt.as_secs(),
             pt.subsec_nanos() / 1_000_000
-        )
+        ),
+    }
+}
