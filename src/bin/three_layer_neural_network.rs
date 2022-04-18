@@ -1,2 +1,4 @@
 extern crate deep_learning_playground;
-exter
+extern crate ndarray;
+
+use deep_learning_playgrou
