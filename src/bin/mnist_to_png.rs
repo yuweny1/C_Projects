@@ -28,3 +28,10 @@ fn main() {
             match s[0].image.clone().into_shape((size, size)) {
                 Ok(ss) => {
                     println!("saving png file to {}...", OUT_FILE_NAME);
+                    to_image(&ss, OUT_FILE_NAME)
+                }
+                Err(e) => eprintln!("{}", e),
+            }
+        }
+    }
+}
