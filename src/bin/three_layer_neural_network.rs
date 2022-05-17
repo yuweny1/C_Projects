@@ -14,4 +14,6 @@ fn main() {
         let biases = [
             &ndarray::array![[0.1, 0.2, 0.3]],
             &ndarray::array![[0.1, 0.2]],
-            &ndarray::array!
+            &ndarray::array![[0.1, 0.2]],
+        ];
+       
