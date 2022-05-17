@@ -16,4 +16,5 @@ fn main() {
             &ndarray::array![[0.1, 0.2]],
             &ndarray::array![[0.1, 0.2]],
         ];
-       
+        let afunc = [
+            &act
