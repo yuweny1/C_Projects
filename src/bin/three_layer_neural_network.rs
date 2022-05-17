@@ -22,4 +22,4 @@ fn main() {
             &activate_functions::identity(),
         ];
 
-        for ((w, b), af) in weights.
+        for ((w, b), af) in weights.iter().zip(biases.iter()).zip(afunc.iter
