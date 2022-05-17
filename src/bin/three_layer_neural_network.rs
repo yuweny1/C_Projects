@@ -18,4 +18,5 @@ fn main() {
         ];
         let afunc = [
             &activate_functions::sigmoid(),
-        
+            &activate_functions::sigmoid(),
+       
