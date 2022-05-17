@@ -21,3 +21,5 @@ fn main() {
             &activate_functions::sigmoid(),
             &activate_functions::identity(),
         ];
+
+        for ((w, b), af) in weights.
