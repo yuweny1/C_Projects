@@ -22,4 +22,5 @@ fn main() {
             &activate_functions::identity(),
         ];
 
-        for ((w, b), af) in weights.iter().zip(biases.iter()).zip(afunc.iter
+        for ((w, b), af) in weights.iter().zip(biases.iter()).zip(afunc.iter()) {
+            match n.safe_next(w,
