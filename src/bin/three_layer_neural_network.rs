@@ -23,4 +23,5 @@ fn main() {
         ];
 
         for ((w, b), af) in weights.iter().zip(biases.iter()).zip(afunc.iter()) {
-            match n.safe_next(w,
+            match n.safe_next(w, b, af) {
+                Err(s) => epri
