@@ -28,4 +28,6 @@ fn main() {
                 _ => (),
             }
         }
-        println!(
+        println!("{}", n);
+    }
+}
