@@ -26,3 +26,6 @@ fn main() {
             match n.safe_next(w, b, af) {
                 Err(s) => eprintln!("{}", s),
                 _ => (),
+            }
+        }
+        println!(
