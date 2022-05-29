@@ -1,3 +1,5 @@
 use ndarray::Array2;
 use ndarray_stats::QuantileExt;
-use num::Floa
+use num::Float;
+
+/// `identity` generates the id
