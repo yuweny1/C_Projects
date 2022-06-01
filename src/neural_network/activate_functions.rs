@@ -6,4 +6,5 @@ use num::Float;
 /// \\(
 /// \text{id}(x)=x
 /// \\) for `Array2`
-pub fn identity<T>() -> Box<dyn 
+pub fn identity<T>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
+    Box::new(|x| -> Ar
