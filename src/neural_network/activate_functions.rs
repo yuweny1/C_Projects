@@ -5,4 +5,5 @@ use num::Float;
 /// `identity` generates the identity function
 /// \\(
 /// \text{id}(x)=x
-/// \\) f
+/// \\) for `Array2`
+pub fn identity<T>() -> Box<dyn 
