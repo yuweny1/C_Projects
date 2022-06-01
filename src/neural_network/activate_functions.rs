@@ -10,4 +10,6 @@ pub fn identity<T>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
     Box::new(|x| -> Array2<T> { x })
 }
 
-/// `sigmoid` generates 
+/// `sigmoid` generates the sigmoid function
+/// \\[
+/// S(x)=\dfrac{1
