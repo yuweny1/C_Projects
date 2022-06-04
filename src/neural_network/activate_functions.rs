@@ -12,4 +12,5 @@ pub fn identity<T>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
 
 /// `sigmoid` generates the sigmoid function
 /// \\[
-/// S(x)=\dfrac{1
+/// S(x)=\dfrac{1}{1+\exp(-x)}
+/// \\] for `Array2` w
