@@ -18,4 +18,4 @@ pub fn sigmoid<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
     Box::new(|x| -> Array2<T> { x.map(|val| T::one() / (T::one() + (-*val).exp())) })
 }
 
-/// `
+/// `rectified_linear_unit` generates the Rectuf
