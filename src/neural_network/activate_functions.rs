@@ -20,4 +20,6 @@ pub fn sigmoid<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
 
 /// `rectified_linear_unit` generates the Rectufied Linear Unit (ReLU) function
 /// \\[
-/// \text
+/// \text{ReLU}(x)=\begin{cases}
+/// x & (x\gt 0) \\\\
+/
