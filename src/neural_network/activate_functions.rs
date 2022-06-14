@@ -22,4 +22,5 @@ pub fn sigmoid<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
 /// \\[
 /// \text{ReLU}(x)=\begin{cases}
 /// x & (x\gt 0) \\\\
-/
+/// 0 & (\text{otherwise})
+/// \end{cases}
