@@ -24,4 +24,5 @@ pub fn sigmoid<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
 /// x & (x\gt 0) \\\\
 /// 0 & (\text{otherwise})
 /// \end{cases}
-/// \\] for `Array2` where \\(x\in\ma
+/// \\] for `Array2` where \\(x\in\mathbb{R}\\).
+pub fn rectified_line
