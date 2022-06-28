@@ -25,4 +25,5 @@ pub fn sigmoid<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
 /// 0 & (\text{otherwise})
 /// \end{cases}
 /// \\] for `Array2` where \\(x\in\mathbb{R}\\).
-pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>)
+pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
+    Box::new(|x| -> 
