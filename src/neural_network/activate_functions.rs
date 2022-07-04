@@ -29,4 +29,5 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
     Box::new(|x| -> Array2<T> { x.map(|val| if *val > T::zero() { *val } else { T::zero() }) })
 }
 
-/// `softmax
+/// `softmax` generates the softmax function:
+/// 
