@@ -30,4 +30,5 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 }
 
 /// `softmax` generates the softmax function:
-/// 
+/// \\\[
+/// \text{SoftMax}(\boldsymbol{x})=\left( \dfr
