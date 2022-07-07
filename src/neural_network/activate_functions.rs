@@ -31,4 +31,5 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 
 /// `softmax` generates the softmax function:
 /// \\\[
-/// \text{SoftMax}(\boldsymbol{x})=\left( \dfrac{\exp(x_1)}{\displaystyle\sum^n_{j=1}\exp(x_j)}
+/// \text{SoftMax}(\boldsymbol{x})=\left( \dfrac{\exp(x_1)}{\displaystyle\sum^n_{j=1}\exp(x_j)},
+/// \dfrac{\exp(x_2)}{\displaystyle\sum^n_{
