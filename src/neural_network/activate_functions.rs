@@ -35,4 +35,7 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// \dfrac{\exp(x_2)}{\displaystyle\sum^n_{j=1}\exp(x_j)}, \cdots,
 /// \dfrac{\exp(x_n)}{\displaystyle\sum^n_{j=1}\exp(x_j)} \right)
 /// \\] for `Array2` where \\(\boldsymbol{x}=\left(x_1,\cdots,x_n\right)^T\subseteq\mathbb{R}^{n\times 1}\\).
-/// To prevent overflow, actually calculate according to the following equ
+/// To prevent overflow, actually calculate according to the following equation:
+/// \\[
+/// \begin{array}{lll}
+/// 
