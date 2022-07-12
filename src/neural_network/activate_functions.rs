@@ -38,4 +38,5 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// To prevent overflow, actually calculate according to the following equation:
 /// \\[
 /// \begin{array}{lll}
-/// \dfrac{\exp(x_i)}{\displaystyle\sum^n_{j=1}\exp(x_j)}&=&\dfrac{C\exp(x_i)}{C\displaystyle\sum^
+/// \dfrac{\exp(x_i)}{\displaystyle\sum^n_{j=1}\exp(x_j)}&=&\dfrac{C\exp(x_i)}{C\displaystyle\sum^n_{j=1}\exp(x_j)}\\\\
+/// &=&\dfrac{\exp(
