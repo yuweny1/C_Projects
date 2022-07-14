@@ -44,3 +44,4 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// \end{array}
 /// \\]
 /// Therefore, \\(C'\\) can be for all value.
+/// Thus \\(C'=x_{\text{max}}\\)
