@@ -43,4 +43,4 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// &=&\dfrac{\exp(x_i+C')}{\displaystyle\sum^n_{j=1}\exp(x_j+C')}
 /// \end{array}
 /// \\]
-/// Theref
+/// Therefore, \\(C'\\) can be for all value.
