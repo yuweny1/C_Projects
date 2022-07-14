@@ -39,4 +39,4 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// \\[
 /// \begin{array}{lll}
 /// \dfrac{\exp(x_i)}{\displaystyle\sum^n_{j=1}\exp(x_j)}&=&\dfrac{C\exp(x_i)}{C\displaystyle\sum^n_{j=1}\exp(x_j)}\\\\
-/// &=&\dfrac{\exp(
+/// &=&\dfrac{\exp(x_i+\log C)}{\displaystyle\sum^n_{j=1}\
