@@ -44,4 +44,5 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 /// \end{array}
 /// \\]
 /// Therefore, \\(C'\\) can be for all value.
-/// Thus \\(C'=x_{\text{max}}\\) where \\(^\forall x_i, ^\exists x_{\text{max}}\in\boldsymbol{x}\\) s
+/// Thus \\(C'=x_{\text{max}}\\) where \\(^\forall x_i, ^\exists x_{\text{max}}\in\boldsymbol{x}\\) s.t. \\(x_{\text{max}}\geq x_i\\).
+p
