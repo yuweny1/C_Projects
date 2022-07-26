@@ -48,4 +48,4 @@ pub fn rectified_linear_unit<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> 
 pub fn softmax<T: Float>() -> Box<dyn Fn(Array2<T>) -> Array2<T>> {
     Box::new(|x| -> Array2<T> {
         let max: T = *x.max().unwrap();
-        let sum: T = x.
+        let sum: T = x.fold(T::zero(), |acc, val| acc + (*val - max).
