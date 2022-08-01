@@ -6,4 +6,5 @@ use std::fmt;
 
 pub mod activate_functions;
 
-#[derive(
+#[derive(Default)]
+pub struct NeuralNetwork<T> 
