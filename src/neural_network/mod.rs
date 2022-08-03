@@ -11,4 +11,4 @@ pub struct NeuralNetwork<T> {
     neurons: Array2<T>,
 }
 
-impl<T: Float + 
+impl<T: Float + fmt::Display> fmt::Display for Neu
