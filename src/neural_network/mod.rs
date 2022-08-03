@@ -7,4 +7,8 @@ use std::fmt;
 pub mod activate_functions;
 
 #[derive(Default)]
-pub struct NeuralNetwork<T> 
+pub struct NeuralNetwork<T> {
+    neurons: Array2<T>,
+}
+
+impl<T: Float + 
