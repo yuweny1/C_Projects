@@ -13,4 +13,8 @@ pub struct NeuralNetwork<T> {
 
 impl<T: Float + fmt::Display> fmt::Display for NeuralNetwork<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.neurons
+        write!(f, "{}", self.neurons)
+    }
+}
+
+impl<T: Float + 'static> Neur
