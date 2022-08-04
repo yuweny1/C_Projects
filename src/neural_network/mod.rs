@@ -17,4 +17,5 @@ impl<T: Float + fmt::Display> fmt::Display for NeuralNetwork<T> {
     }
 }
 
-impl<T: Float + 'static> Neur
+impl<T: Float + 'static> NeuralNetwork<T> {
+    /// `new` is the constructor
