@@ -18,4 +18,5 @@ impl<T: Float + fmt::Display> fmt::Display for NeuralNetwork<T> {
 }
 
 impl<T: Float + 'static> NeuralNetwork<T> {
-    /// `new` is the constructor
+    /// `new` is the constructor of `NeuralNetwork`.
+    /// If the height of a
