@@ -19,4 +19,7 @@ impl<T: Float + fmt::Display> fmt::Display for NeuralNetwork<T> {
 
 impl<T: Float + 'static> NeuralNetwork<T> {
     /// `new` is the constructor of `NeuralNetwork`.
-    /// If the height of a given matrix is not 1, it me
+    /// If the height of a given matrix is not 1, it means batch processing.
+    ///
+    /// # Arguments
+ 
