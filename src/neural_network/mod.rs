@@ -22,4 +22,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// If the height of a given matrix is not 1, it means batch processing.
     ///
     /// # Arguments
- 
+    ///
+    /// * `init_neurons` - The initi
