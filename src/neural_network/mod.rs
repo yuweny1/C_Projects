@@ -23,4 +23,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     ///
     /// # Arguments
     ///
-    /// * `init_neurons` - The initi
+    /// * `init_neurons` - The initial matrix \\(\mathbb{R}^{n\times m}\\).
+  
