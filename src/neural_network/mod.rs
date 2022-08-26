@@ -29,4 +29,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
             return Err(failure::format_err!("the matrix is empty"));
         }
 
-        Ok(Ne
+        Ok(NeuralNetwork::<T> {
+            neurons: in
