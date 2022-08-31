@@ -30,4 +30,8 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         }
 
         Ok(NeuralNetwork::<T> {
-            neurons: in
+            neurons: init_neurons,
+        })
+    }
+
+    /// L
