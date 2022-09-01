@@ -34,4 +34,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         })
     }
 
-    /// L
+    /// Let a current matrix \\(X^{1\times m_X}\\),
+ 
