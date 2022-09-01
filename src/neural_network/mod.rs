@@ -35,4 +35,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     }
 
     /// Let a current matrix \\(X^{1\times m_X}\\),
-    /// given arguments \\(W^{n_W\times m_W}\\) (weight) and \\(B^{1\times m_B}\\) (b
+    /// given arguments \\(W^{n_W\times m_W}\\) (weight) and \\(B^{1\times m_B}\\) (bias)
+    /// where \\(m_X=n_W\\), \\(m_W=m_B\\).
+   
