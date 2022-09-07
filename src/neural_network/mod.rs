@@ -38,4 +38,8 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// given arguments \\(W^{n_W\times m_W}\\) (weight) and \\(B^{1\times m_B}\\) (bias)
     /// where \\(m_X=n_W\\), \\(m_W=m_B\\).
     /// Thus, `next` computes next neurons \\(X W+B\\).
-    /// If \\(m_X \not = n_W\\) or \\(m_W \not = m_B\\), it returns `Err
+    /// If \\(m_X \not = n_W\\) or \\(m_W \not = m_B\\), it returns `Err`.
+    ///
+    /// # Arguments
+    ///
+    
