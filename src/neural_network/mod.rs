@@ -42,4 +42,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     ///
     /// # Arguments
     ///
-    
+    /// * `weight` - Weight matrix \\
