@@ -49,4 +49,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     pub fn safe_next(
         &mut self,
         weight: &Array2<T>,
-  
+        bias: &Array2<T>,
+        activate
