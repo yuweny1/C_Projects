@@ -47,4 +47,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// * `activate_function` - The activate function.
     #[inline]
     pub fn safe_next(
-        &mut sel
+        &mut self,
+        weight: &Array2<T>,
+  
