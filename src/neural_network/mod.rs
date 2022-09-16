@@ -52,4 +52,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         bias: &Array2<T>,
         activate_function: &Box<dyn Fn(Array2<T>) -> Array2<T>>,
     ) -> Result<(), Error> {
-        match
+        match (self.neurons.dim(), weight.dim(), bias.
