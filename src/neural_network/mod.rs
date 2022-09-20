@@ -55,4 +55,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         match (self.neurons.dim(), weight.dim(), bias.dim()) {
             ((_, width1), (height, width2), (_, width3))
                 if width1 == height && width2 == width3 =>
-          
+            {
+                Ok(self.next(weight, bias, 
