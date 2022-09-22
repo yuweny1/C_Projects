@@ -56,4 +56,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
             ((_, width1), (height, width2), (_, width3))
                 if width1 == height && width2 == width3 =>
             {
-                Ok(self.next(weight, bias, 
+                Ok(self.next(weight, bias, activate_function))
+            }
+          
