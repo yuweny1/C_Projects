@@ -58,4 +58,8 @@ impl<T: Float + 'static> NeuralNetwork<T> {
             {
                 Ok(self.next(weight, bias, activate_function))
             }
-            _ => Err(failure::format_err!("Inval
+            _ => Err(failure::format_err!("Invalid argument")),
+        }
+    }
+
+    
