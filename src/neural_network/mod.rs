@@ -65,4 +65,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// Compute \\(h(X\cdot W+B)\\) where \\(X^{n_X\times m_X}\\) is a neurons matrix,
     /// \\(W^{n_W\times m_W\\) is a weights matrix,
     /// \\(B^{1\tims m_B}\\) is a bias matrix.
-    /// These arg
+    /// These arguments must follow \\(m_X=n_W\\), \\(m_W=m_B\\).
+    //
