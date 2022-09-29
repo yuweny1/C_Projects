@@ -62,4 +62,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         }
     }
 
-    /// Compute \\(h(X\cdot W+B)\\) where \\(X^{n_X\times m_X}\\) is a neurons ma
+    /// Compute \\(h(X\cdot W+B)\\) where \\(X^{n_X\times m_X}\\) is a neurons matrix,
+    /// \\(W^{n_W\times m_W\\) i
