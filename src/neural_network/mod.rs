@@ -62,4 +62,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         }
     }
 
-    
+    /// Compute \\(h(X\cdot W+B)\\) wh
