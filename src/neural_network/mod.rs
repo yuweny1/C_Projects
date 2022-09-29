@@ -66,4 +66,7 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// \\(W^{n_W\times m_W\\) is a weights matrix,
     /// \\(B^{1\tims m_B}\\) is a bias matrix.
     /// These arguments must follow \\(m_X=n_W\\), \\(m_W=m_B\\).
-    //
+    ///
+    /// # Arguments
+    ///
+    /// *
