@@ -71,4 +71,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     ///
     /// * `weight` - Weight matrix \\(W^{n_W\times m_W\\) for computing next neuron.
     /// * `bias` - Bias matrix \\(B^{n_B\times m_B}\\) for computing next neuron.
-    /// * `activate_function`
+    /// * `activate_function` - The activate_function.
+    #[inline]
+  
