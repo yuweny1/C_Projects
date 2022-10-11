@@ -70,4 +70,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// # Arguments
     ///
     /// * `weight` - Weight matrix \\(W^{n_W\times m_W\\) for computing next neuron.
-    /// * `bias` - Bias matrix \\(B
+    /// * `bias` - Bias matrix \\(B^{n_B\times m_B}\\) for computing next neur
