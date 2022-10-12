@@ -75,4 +75,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     #[inline]
     pub fn next(
         &mut self,
-        we
+        weight: &Array2<T>,
+        bias: &Array2<
