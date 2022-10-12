@@ -73,4 +73,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// * `bias` - Bias matrix \\(B^{n_B\times m_B}\\) for computing next neuron.
     /// * `activate_function` - The activate_function.
     #[inline]
-  
+    pub fn next(
+        &mut self,
+        we
