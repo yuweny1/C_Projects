@@ -76,4 +76,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     pub fn next(
         &mut self,
         weight: &Array2<T>,
-        bias: &Array2<
+        bias: &Array2<T>,
+        activate_function: &Box<dyn F
