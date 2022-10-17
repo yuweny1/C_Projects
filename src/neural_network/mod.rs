@@ -79,4 +79,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         bias: &Array2<T>,
         activate_function: &Box<dyn Fn(Array2<T>) -> Array2<T>>,
     ) {
-    
+        self.neurons = activate_function(se
