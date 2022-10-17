@@ -82,3 +82,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         self.neurons = activate_function(self.neurons.dot(weight) + bias)
     }
 
+    /// `dim` returns the shape 
