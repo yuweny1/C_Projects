@@ -91,4 +91,5 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// `argmax` returns the index of maximum value.
     /// 行毎の最大値
     #[inline]
-    pub fn argma
+    pub fn argmax(&self) -> Vec<usize> {
+        self.neuron
