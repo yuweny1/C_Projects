@@ -88,4 +88,7 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         self.neurons.dim()
     }
 
-    /// `argmax` returns the index of maximum valu
+    /// `argmax` returns the index of maximum value.
+    /// 行毎の最大値
+    #[inline]
+    pub fn argma
