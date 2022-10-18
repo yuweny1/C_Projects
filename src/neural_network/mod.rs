@@ -84,4 +84,4 @@ impl<T: Float + 'static> NeuralNetwork<T> {
 
     /// `dim` returns the shape of the array.
     #[inline]
-  
+    pub fn dim(&self) -> (ndarray
