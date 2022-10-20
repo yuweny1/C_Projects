@@ -95,4 +95,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
         self.neurons
             .outer_iter()
             .map(|x| x.argmax().unwrap())
-            .collec
+            .collect::<Vec<usize>>()
+    }
+}
