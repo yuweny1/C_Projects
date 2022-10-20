@@ -92,4 +92,6 @@ impl<T: Float + 'static> NeuralNetwork<T> {
     /// 行毎の最大値
     #[inline]
     pub fn argmax(&self) -> Vec<usize> {
-        self.neuron
+        self.neurons
+            .outer_iter()
+            .ma
