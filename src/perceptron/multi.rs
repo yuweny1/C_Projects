@@ -1,3 +1,3 @@
 extern crate num;
 
-use super::s
+use super::single::{and_perceptron, nand_percep
