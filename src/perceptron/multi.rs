@@ -9,4 +9,5 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 /// | \\(p\\) | \\(q\\) | `xor_perceptron()(`\\(p\\)`,`\\(q\\)`)` |
 /// | -- | -- | -- |
 /// | \\(1\\) | \\(1\\) | \\(0\\) |
-/// | \\
+/// | \\(1\\) | \\(0\\) | \\(1\\) |
+/// | \\(0\\
