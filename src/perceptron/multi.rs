@@ -6,4 +6,6 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 /// Let \\(p\\) and \\(q\\) are logical variables, `xor_perceptron` generates the function which
 /// satisfies the following truth table.
 ///
-/// | \\(p\\) | \\(q\\) | `xor_perceptron()(`\\(p\\)`,`\
+/// | \\(p\\) | \\(q\\) | `xor_perceptron()(`\\(p\\)`,`\\(q\\)`)` |
+/// | -- | -- | -- |
+/// 
