@@ -14,4 +14,6 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 /// | \\(0\\) | \\(0\\) | \\(0\\) |
 ///
 /// # e.g.
-/
+///
+/// ```
+/// assert_eq!(true, deep_lear
