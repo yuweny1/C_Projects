@@ -19,4 +19,5 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 /// assert_eq!(true, deep_learning_playground::perceptron::multi::xor_perceptron()(true, false));
 /// assert_eq!(false, deep_learning_playground::perceptron::multi::xor_perceptron()(true, true));
 /// ```
-pub fn xor_perceptron() -> Box<dyn F
+pub fn xor_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
+    Box::new
