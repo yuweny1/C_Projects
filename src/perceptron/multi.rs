@@ -17,4 +17,4 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 ///
 /// ```
 /// assert_eq!(true, deep_learning_playground::perceptron::multi::xor_perceptron()(true, false));
-/// assert_eq!(false, deep
+/// assert_eq!(false, deep_learning_playground::perceptr
