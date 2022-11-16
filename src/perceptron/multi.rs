@@ -21,4 +21,4 @@ use super::single::{and_perceptron, nand_perceptron, or_perceptron};
 /// ```
 pub fn xor_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
     Box::new(|x1: bool, x2: bool| -> bool {
-        
+        and_perceptron()(nand_perceptron()(x1,
