@@ -34,4 +34,5 @@ mod tests {
         expected_answer: &[bool; 4],
     ) {
         let mut i: usize = 0;
-        for b1 in [true, 
+        for b1 in [true, false].iter() {
+            for b2
