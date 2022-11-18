@@ -33,4 +33,5 @@ mod tests {
         logical_gate: &Box<dyn Fn(bool, bool) -> bool>,
         expected_answer: &[bool; 4],
     ) {
-        le
+        let mut i: usize = 0;
+        for b1 in [true, 
