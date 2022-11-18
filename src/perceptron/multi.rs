@@ -24,3 +24,7 @@ pub fn xor_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
         and_perceptron()(nand_perceptron()(x1, x2), or_perceptron()(x1, x2))
     })
 }
+
+#[cfg(test)]
+mod tests {
+    use super:
