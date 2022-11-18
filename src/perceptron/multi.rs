@@ -27,4 +27,7 @@ pub fn xor_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
 
 #[cfg(test)]
 mod tests {
-    use super:
+    use super::*;
+
+    fn test_logical_gates_impl(
+ 
