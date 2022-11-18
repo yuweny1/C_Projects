@@ -30,4 +30,5 @@ mod tests {
     use super::*;
 
     fn test_logical_gates_impl(
-        logical_gate: &Box<dyn 
+        logical_gate: &Box<dyn Fn(bool, bool) -> bool>,
+        expected_
