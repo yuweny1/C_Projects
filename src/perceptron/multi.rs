@@ -30,4 +30,4 @@ mod tests {
     use super::*;
 
     fn test_logical_gates_impl(
- 
+        logical_gate: &Box<dyn 
