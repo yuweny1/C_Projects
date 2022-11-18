@@ -31,4 +31,6 @@ mod tests {
 
     fn test_logical_gates_impl(
         logical_gate: &Box<dyn Fn(bool, bool) -> bool>,
-        expected_
+        expected_answer: &[bool; 4],
+    ) {
+        le
