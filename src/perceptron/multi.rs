@@ -35,4 +35,5 @@ mod tests {
     ) {
         let mut i: usize = 0;
         for b1 in [true, false].iter() {
-            for b2
+            for b2 in [true, false].iter() {
+              
