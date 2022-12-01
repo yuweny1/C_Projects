@@ -36,4 +36,5 @@ mod tests {
         let mut i: usize = 0;
         for b1 in [true, false].iter() {
             for b2 in [true, false].iter() {
-                assert_eq!(logical_gate(*b1, *b2), expect
+                assert_eq!(logical_gate(*b1, *b2), expected_answer[i]);
+                i +=
