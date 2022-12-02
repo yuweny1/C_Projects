@@ -43,3 +43,5 @@ mod tests {
     }
 
     #[test]
+    fn test_logical_gates() {
+        test
