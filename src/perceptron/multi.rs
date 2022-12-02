@@ -44,4 +44,4 @@ mod tests {
 
     #[test]
     fn test_logical_gates() {
-        test
+        test_logical_gates_impl(&xor_perceptron(
