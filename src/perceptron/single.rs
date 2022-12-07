@@ -112,3 +112,37 @@ pub fn nand_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
 /// | \\(0\\) | \\(1\\) | \\(1\\) |
 /// | \\(0\\) | \\(0\\) | \\(0\\) |
 ///
+/// # e.g.
+///
+/// ```
+/// assert_eq!(true, deep_learning_playground::perceptron::single::or_perceptron()(true, false));
+/// assert_eq!(false, deep_learning_playground::perceptron::single::or_perceptron()(false, false));
+/// ```
+pub fn or_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
+    logical_perceptron(&0.5, &0.5, &-0.2)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn test_logical_gates_impl(
+        logical_gate: &Box<dyn Fn(bool, bool) -> bool>,
+        expected_answer: &[bool; 4],
+    ) {
+        let mut i: usize = 0;
+        for b1 in [true, false].iter() {
+            for b2 in [true, false].iter() {
+                assert_eq!(logical_gate(*b1, *b2), expected_answer[i]);
+                i += 1;
+            }
+        }
+    }
+
+    #[test]
+    fn test_logical_gates() {
+        test_logical_gates_impl(&and_perceptron(), &[true, false, false, false]);
+        test_logical_gates_impl(&nand_perceptron(), &[false, true, true, true]);
+        test_logical_gates_impl(&or_perceptron(), &[true, true, true, false]);
+    }
+}
