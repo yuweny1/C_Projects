@@ -36,3 +36,41 @@ pub fn step_function<T: Float>(val: T) -> bool {
 ///
 /// # Arguments
 ///
+/// * `w1` - Weights for signal `x1`
+/// * `w2` - Weights for signal `x2`
+/// * `bias` - Bias that determines the ease of firing of neurons
+///
+/// # e.g.
+///
+/// ```
+/// assert_eq!(true, deep_learning_playground::perceptron::single::logical_perceptron(&0.5, &0.5, &-0.7)(true, true));
+/// assert_eq!(false, deep_learning_playground::perceptron::single::logical_perceptron(&-0.5, &-0.5, &0.7)(true, true));
+/// assert_eq!(true, deep_learning_playground::perceptron::single::logical_perceptron(&0.5, &0.5, &-0.2)(true, false));
+/// ```
+pub fn logical_perceptron<T: Float>(
+    w1: &'static T,
+    w2: &'static T,
+    bias: &'static T,
+) -> Box<dyn Fn(bool, bool) -> bool> {
+    Box::new(move |x1: bool, x2: bool| -> bool {
+        let f = |x| if x { T::one() } else { T::zero() };
+        step_function(*bias + *w1 * f(x1) + *w2 * f(x2))
+    })
+}
+
+/// `and_perceptron` generates the logical AND function.
+/// Let \\(p\\) and \\(q\\) are logical variables, `and_perceptron` generates the function which
+/// satisfies the following truth table.
+///
+/// | \\(p\\) | \\(q\\) | `and_perceptron()(`\\(p\\)`,`\\(q\\)`)` |
+/// | -- | -- | -- |
+/// | \\(1\\) | \\(1\\) | \\(1\\) |
+/// | \\(1\\) | \\(0\\) | \\(0\\) |
+/// | \\(0\\) | \\(1\\) | \\(0\\) |
+/// | \\(0\\) | \\(0\\) | \\(0\\) |
+///
+/// # e.g.
+///
+/// ```
+/// assert_eq!(true, deep_learning_playground::perceptron::single::and_perceptron()(true, true));
+/// assert_eq!(false, deep_learning_playground::perceptron::single::and_perceptron()(false, true));
