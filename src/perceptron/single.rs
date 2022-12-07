@@ -74,3 +74,41 @@ pub fn logical_perceptron<T: Float>(
 /// ```
 /// assert_eq!(true, deep_learning_playground::perceptron::single::and_perceptron()(true, true));
 /// assert_eq!(false, deep_learning_playground::perceptron::single::and_perceptron()(false, true));
+/// assert_eq!(false, deep_learning_playground::perceptron::single::and_perceptron()(false, false));
+/// ```
+pub fn and_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
+    logical_perceptron(&0.5, &0.5, &-0.7)
+}
+
+/// `nand_perceptron` generates the logical NAND function.
+/// Let \\(p\\) and \\(q\\) are logical variables, `nand_perceptron` generates the function which
+/// satisfies the following truth table.
+///
+/// | \\(p\\) | \\(q\\) | `nand_perceptron()(`\\(p\\)`,`\\(q\\)`)` |
+/// | -- | -- | -- |
+/// | \\(1\\) | \\(1\\) | \\(0\\) |
+/// | \\(1\\) | \\(0\\) | \\(1\\) |
+/// | \\(0\\) | \\(1\\) | \\(1\\) |
+/// | \\(0\\) | \\(0\\) | \\(1\\) |
+///
+/// # e.g.
+///
+/// ```
+/// assert_eq!(true, deep_learning_playground::perceptron::single::nand_perceptron()(true, false));
+/// assert_eq!(false, deep_learning_playground::perceptron::single::nand_perceptron()(true, true));
+/// ```
+pub fn nand_perceptron() -> Box<dyn Fn(bool, bool) -> bool> {
+    logical_perceptron(&-0.5, &-0.5, &0.7)
+}
+
+/// `or_perceptron` generates the logical OR function.
+/// Let \\(p\\) and \\(q\\) are logical variables, `or_perceptron()(`\\(p\\)`,`\\(q\\)`)` generates the function which
+/// satisfies the following truth table.
+///
+/// | \\(p\\) | \\(q\\) | `or_perceptron()(`\\(p\\)`,`\\(q\\)`)` |
+/// | -- | -- | -- |
+/// | \\(1\\) | \\(1\\) | \\(1\\) |
+/// | \\(1\\) | \\(0\\) | \\(1\\) |
+/// | \\(0\\) | \\(1\\) | \\(1\\) |
+/// | \\(0\\) | \\(0\\) | \\(0\\) |
+///
