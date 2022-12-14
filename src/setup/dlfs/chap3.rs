@@ -5,4 +5,7 @@ use numpy::{PyArray1, PyArray2};
 use pyo3::prelude::{ObjectProtocol, PyResult, Python};
 use pyo3::types::IntoPyDict;
 use std::fmt;
-use 
+use std::io;
+use std::vec::Vec;
+
+const URL_
