@@ -8,4 +8,4 @@ use std::fmt;
 use std::io;
 use std::vec::Vec;
 
-const URL_BASE: &'static str = "https://github.com/oreilly-japan/deep-learning-from-scratc
+const URL_BASE: &'static str = "https://github.com/oreilly-japan/deep-learning-from-scratch/blob/0dda3d1715e2431b76eb4089b608819
