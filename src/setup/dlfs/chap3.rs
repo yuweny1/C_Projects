@@ -24,4 +24,4 @@ pub struct Chap3Param {
 }
 
 impl fmt::Display for Chap3Param {
-   
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::R
