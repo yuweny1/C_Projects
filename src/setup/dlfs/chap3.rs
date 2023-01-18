@@ -12,4 +12,4 @@ const URL_BASE: &'static str = "https://github.com/oreilly-japan/deep-learning-f
 const WEIGHT_SAVE_DIR: &'static str = ".weight_data";
 const FILE_NAME: &'static str = "sample_weight.pkl";
 const WEIGHT_NAMES: [&'static str; 3] = ["W1", "W2", "W3"];
-const BIAS_NAMES: [&'s
+const BIAS_NAMES: [&'static str; 3] = ["b1", "b2", "b3"];
