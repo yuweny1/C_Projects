@@ -23,3 +23,5 @@ pub struct Chap3Param {
     pub bias: Vec<Array2<f32>>,
 }
 
+impl fmt::Display for Chap3Param {
+   
