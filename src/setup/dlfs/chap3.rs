@@ -16,4 +16,6 @@ const BIAS_NAMES: [&'static str; 3] = ["b1", "b2", "b3"];
 
 /// `Chap3Param` is data structure that has weight matrixes and bias matrixes.
 #[derive(Debug)]
-pub struct Chap3Pa
+pub struct Chap3Param {
+    /// weight matrixes
+    pub weig
