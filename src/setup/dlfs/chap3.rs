@@ -18,4 +18,5 @@ const BIAS_NAMES: [&'static str; 3] = ["b1", "b2", "b3"];
 #[derive(Debug)]
 pub struct Chap3Param {
     /// weight matrixes
-    pub weig
+    pub weight: Vec<Array2<f32>>,
+    /// bias m
