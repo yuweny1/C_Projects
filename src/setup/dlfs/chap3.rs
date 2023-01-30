@@ -26,3 +26,8 @@ pub struct Chap3Param {
 impl fmt::Display for Chap3Param {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "weight: {:?}\n\nbias: {:?}", self.weight, self.bias)
+    }
+}
+
+fn deserialize<'py>(
+    
