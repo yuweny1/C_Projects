@@ -30,4 +30,6 @@ impl fmt::Display for Chap3Param {
 }
 
 fn deserialize<'py>(
-    
+    py: Python<'py>,
+    client: &FetchClient,
+   
