@@ -34,4 +34,4 @@ fn deserialize<'py>(
     client: &FetchClient,
     fname: &str,
 ) -> PyResult<io::Result<Chap3Param>> {
-    if client.dir_client.exis
+    if client.dir_client.exists() && client.dir_client.file_exists
