@@ -33,4 +33,5 @@ fn deserialize<'py>(
     py: Python<'py>,
     client: &FetchClient,
     fname: &str,
-) -> PyResult<io::Result<
+) -> PyResult<io::Result<Chap3Param>> {
+    if client.dir_client.exis
