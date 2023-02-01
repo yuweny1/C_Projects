@@ -35,4 +35,4 @@ fn deserialize<'py>(
     fname: &str,
 ) -> PyResult<io::Result<Chap3Param>> {
     if client.dir_client.exists() && client.dir_client.file_exists(fname) {
-        if let Some(path)
+        if let Some(path) = client.dir_client.file_path(fn
