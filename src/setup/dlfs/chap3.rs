@@ -38,4 +38,5 @@ fn deserialize<'py>(
         if let Some(path) = client.dir_client.file_path(fname).to_str() {
             let locals = [
                 ("io", py.import("io")?),
-                ("numpy", py.import("numpy")?)
+                ("numpy", py.import("numpy")?),
+                ("pickle", py.import("pickle")?)
