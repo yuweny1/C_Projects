@@ -39,4 +39,6 @@ fn deserialize<'py>(
             let locals = [
                 ("io", py.import("io")?),
                 ("numpy", py.import("numpy")?),
-                ("pickle", py.import("pickle")?)
+                ("pickle", py.import("pickle")?),
+            ]
+            .
