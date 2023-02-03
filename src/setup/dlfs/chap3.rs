@@ -41,4 +41,6 @@ fn deserialize<'py>(
                 ("numpy", py.import("numpy")?),
                 ("pickle", py.import("pickle")?),
             ]
-            .
+            .into_py_dict(py);
+
+            let mut wei
