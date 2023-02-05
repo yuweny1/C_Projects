@@ -44,4 +44,4 @@ fn deserialize<'py>(
             .into_py_dict(py);
 
             let mut weight: Vec<Array2<f32>> = vec![];
-          
+            let mut bias: Vec<Array2<f32>> = vec![];
