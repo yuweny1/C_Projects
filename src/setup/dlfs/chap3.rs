@@ -47,4 +47,4 @@ fn deserialize<'py>(
             let mut bias: Vec<Array2<f32>> = vec![];
 
             for w in WEIGHT_NAMES.iter() {
-                let code = "pickle.load(i
+                let code = "pickle.load(io.open('".to_owned() + path + "','rb'))['" + w 
