@@ -52,4 +52,5 @@ fn deserialize<'py>(
                 weight.push(pyarray.as_array().to_owned());
             }
 
-            for b in BIAS_NAMES
+            for b in BIAS_NAMES.iter() {
+                let code = "pick
