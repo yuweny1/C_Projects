@@ -48,4 +48,5 @@ fn deserialize<'py>(
 
             for w in WEIGHT_NAMES.iter() {
                 let code = "pickle.load(io.open('".to_owned() + path + "','rb'))['" + w + "']";
-                let pyarray: &PyArray2<f32> = py.eval(&code, None, Some(&
+                let pyarray: &PyArray2<f32> = py.eval(&code, None, Some(&locals))?.extract()?;
+                weight.
