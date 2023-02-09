@@ -53,4 +53,5 @@ fn deserialize<'py>(
             }
 
             for b in BIAS_NAMES.iter() {
-                let code = "pickle.load(io.open('".to_owned() + path + "
+                let code = "pickle.load(io.open('".to_owned() + path + "','rb'))['" + b + "']";
+        
