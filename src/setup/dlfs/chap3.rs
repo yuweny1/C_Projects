@@ -55,4 +55,5 @@ fn deserialize<'py>(
             for b in BIAS_NAMES.iter() {
                 let code = "pickle.load(io.open('".to_owned() + path + "','rb'))['" + b + "']";
                 let pyarray: &PyArray1<f32> = py.eval(&code, None, Some(&locals))?.extract()?;
-                let ar = pyarra
+                let ar = pyarray.as_array().to_owned();
+    
