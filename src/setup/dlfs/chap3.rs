@@ -56,4 +56,5 @@ fn deserialize<'py>(
                 let code = "pickle.load(io.open('".to_owned() + path + "','rb'))['" + b + "']";
                 let pyarray: &PyArray1<f32> = py.eval(&code, None, Some(&locals))?.extract()?;
                 let ar = pyarray.as_array().to_owned();
-    
+                let len = ar.dim();
+           
