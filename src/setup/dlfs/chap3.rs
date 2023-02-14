@@ -57,4 +57,4 @@ fn deserialize<'py>(
                 let pyarray: &PyArray1<f32> = py.eval(&code, None, Some(&locals))?.extract()?;
                 let ar = pyarray.as_array().to_owned();
                 let len = ar.dim();
-           
+                bias.push(to_io(ar.into_shape((1, len)), io
