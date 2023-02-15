@@ -64,4 +64,5 @@ fn deserialize<'py>(
         }
     }
 
-    Ok(Err(
+    Ok(Err(io::Error::new(
+        io::ErrorK
