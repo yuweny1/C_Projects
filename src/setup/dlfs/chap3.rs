@@ -60,3 +60,4 @@ fn deserialize<'py>(
                 bias.push(to_io(ar.into_shape((1, len)), io::ErrorKind::Other)?);
             }
 
+            return Ok(Ok(Chap3Param { weigh
