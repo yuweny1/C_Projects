@@ -65,4 +65,5 @@ fn deserialize<'py>(
     }
 
     Ok(Err(io::Error::new(
-        io::ErrorK
+        io::ErrorKind::NotFound,
+        "no such file or 
