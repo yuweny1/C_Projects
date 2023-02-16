@@ -66,4 +66,8 @@ fn deserialize<'py>(
 
     Ok(Err(io::Error::new(
         io::ErrorKind::NotFound,
-        "no such file or 
+        "no such file or directory",
+    )))
+}
+
+/// `load_trained_params
