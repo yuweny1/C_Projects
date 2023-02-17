@@ -70,4 +70,4 @@ fn deserialize<'py>(
     )))
 }
 
-/// `load_trained_params
+/// `load_trained_params` loads trained parameters from pi
