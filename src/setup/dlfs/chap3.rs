@@ -70,4 +70,5 @@ fn deserialize<'py>(
     )))
 }
 
-/// `load_trained_params` loads trained parameters from pi
+/// `load_trained_params` loads trained parameters from pickle
+/// ([oreilly-japan/deep-learning-from
