@@ -71,4 +71,4 @@ fn deserialize<'py>(
 }
 
 /// `load_trained_params` loads trained parameters from pickle
-/// ([oreilly-japan/deep-learning-from
+/// ([oreilly-japan/deep-learning-from-scratch/ch03/sample_weight.pkl](h
