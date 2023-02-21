@@ -74,4 +74,5 @@ fn deserialize<'py>(
 /// ([oreilly-japan/deep-learning-from-scratch/ch03/sample_weight.pkl](https://github.com/oreilly-japan/deep-learning-from-scratch/blob/0dda3d1715e2431b76eb4089b60881948853ba2a/ch03/sample_weight.pkl)).
 /// It requires some python packages. E.g. python3-dev, python-dev (On Ubuntu 18.04)
 /// and `numpy`.
-pub fn load_trained_params()
+pub fn load_trained_params() -> io::Result<Chap3Param> {
+    let file =
