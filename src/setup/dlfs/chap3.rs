@@ -75,4 +75,6 @@ fn deserialize<'py>(
 /// It requires some python packages. E.g. python3-dev, python-dev (On Ubuntu 18.04)
 /// and `numpy`.
 pub fn load_trained_params() -> io::Result<Chap3Param> {
-    let file =
+    let file = [RemoteFile::new(
+        URL_BASE,
+        FILE_N
