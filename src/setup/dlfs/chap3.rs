@@ -77,4 +77,5 @@ fn deserialize<'py>(
 pub fn load_trained_params() -> io::Result<Chap3Param> {
     let file = [RemoteFile::new(
         URL_BASE,
-        FILE_N
+        FILE_NAME,
+        "b7f55a27988ba34c3777b0
