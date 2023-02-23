@@ -78,4 +78,4 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
     let file = [RemoteFile::new(
         URL_BASE,
         FILE_NAME,
-        "b7f55a27988ba34c3777b0
+        "b7f55a27988ba34c3777b0f1bbd464817c8a4db855723e6ff26f70350191
