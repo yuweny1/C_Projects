@@ -82,4 +82,4 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
         "raw=true",
     )];
 
- 
+    let client = FetchClient::new(FConf::ne
