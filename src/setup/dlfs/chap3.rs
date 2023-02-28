@@ -82,4 +82,5 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
         "raw=true",
     )];
 
-    let client = FetchClient::new(FConf::ne
+    let client = FetchClient::new(FConf::new(WEIGHT_SAVE_DIR, file.iter()))?;
+    c
