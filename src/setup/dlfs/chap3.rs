@@ -83,4 +83,6 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
     )];
 
     let client = FetchClient::new(FConf::new(WEIGHT_SAVE_DIR, file.iter()))?;
-    c
+    client.get()?;
+
+    let gil = Python::a
