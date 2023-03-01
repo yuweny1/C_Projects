@@ -88,4 +88,5 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
     let gil = Python::acquire_gil();
     deserialize(gil.python(), &client, FILE_NAME).map_err(|e| {
         io::Error::new(
-            io::ErrorKin
+            io::ErrorKind::Other,
+            format!("Pyt
