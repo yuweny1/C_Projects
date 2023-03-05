@@ -89,4 +89,7 @@ pub fn load_trained_params() -> io::Result<Chap3Param> {
     deserialize(gil.python(), &client, FILE_NAME).map_err(|e| {
         io::Error::new(
             io::ErrorKind::Other,
-            format!("Python interpreter error: {:?}", e)
+            format!("Python interpreter error: {:?}", e),
+        )
+    })?
+}
