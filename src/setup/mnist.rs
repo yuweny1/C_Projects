@@ -129,3 +129,33 @@ impl fmt::Display for MnistImage {
 pub fn load_data(dataset_key: DatasetKey, normalize: bool) -> io::Result<vec::Vec<MnistImage>> {
     const URL_BASE: &'static str = "http://yann.lecun.com/exdb/mnist/";
     const MNIST_SAVE_DIR: &'static str = ".mnist";
+
+    static FILES: [RemoteFile; 4] = [
+        RemoteFile {
+            host_and_path: URL_BASE,
+            fname: "train-images-idx3-ubyte.gz",
+            sha256: "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609",
+            query: "",
+        },
+        RemoteFile {
+            host_and_path: URL_BASE,
+            fname: "train-labels-idx1-ubyte.gz",
+            sha256: "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c",
+            query: "",
+        },
+        RemoteFile {
+            host_and_path: URL_BASE,
+            fname: "t10k-images-idx3-ubyte.gz",
+            sha256: "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+            query: "",
+        },
+        RemoteFile {
+            host_and_path: URL_BASE,
+            fname: "t10k-labels-idx1-ubyte.gz",
+            sha256: "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+            query: "",
+        },
+    ];
+
+    let mnist = FetchClient::new(FConf::new(MNIST_SAVE_DIR, FILES.iter()))?;
+    mnist.get()?;
