@@ -84,3 +84,48 @@ fn unarchive_mnist(client: &FetchClient, fname: &str) -> io::Result<MnistData> {
         2051 => {
             sizes.push(r.read_i32::<BigEndian>()?); // number of images
             sizes.push(r.read_i32::<BigEndian>()?); // number of rows
+            sizes.push(r.read_i32::<BigEndian>()?); // number of columns
+        }
+        _ => return Err(io::Error::new(io::ErrorKind::Other, "unexpected value")),
+    }
+    r.read_to_end(&mut data)?;
+    Ok(MnistData {
+        sizes: sizes,
+        data: data,
+    })
+}
+
+#[derive(Debug, Clone)]
+pub struct MnistImage {
+    pub image: Array2<f64>,
+    pub label: u8,
+}
+
+impl fmt::Display for MnistImage {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(
+            f,
+            "image matrix: {}\nclassification: {}",
+            self.image, self.label
+        )
+    }
+}
+
+/// Loading MNIST Data (<http://yann.lecun.com/exdb/mnist/>).
+/// If the following files are not found in the .mnist directory of the execution path,
+/// download them from the database and decode the data.
+///
+/// * train-images-idx3-ubyte.gz:  training set images (9912422 bytes)
+/// * train-labels-idx1-ubyte.gz:  training set labels (28881 bytes)
+/// * t10k-images-idx3-ubyte.gz:   test set images (1648877 bytes)
+/// * t10k-labels-idx1-ubyte.gz:   test set labels (4542 bytes)
+///
+/// If they existed, read that file and decode the data.
+///
+/// # Arguments
+///
+/// * `dataset_key` - `train_dataset()` or `test_dataset()`.
+/// * `normalize` - Flag that determines whether the image is normalized between 0.0 and 1.0.
+pub fn load_data(dataset_key: DatasetKey, normalize: bool) -> io::Result<vec::Vec<MnistImage>> {
+    const URL_BASE: &'static str = "http://yann.lecun.com/exdb/mnist/";
+    const MNIST_SAVE_DIR: &'static str = ".mnist";
