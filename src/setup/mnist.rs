@@ -194,3 +194,43 @@ pub fn load_data(dataset_key: DatasetKey, normalize: bool) -> io::Result<vec::Ve
             img_data.into_iter().map(|x| x as f64).collect()
         })
     };
+
+    let shape = (1, image_shape);
+    for i in 0..images_data.sizes[0] as usize {
+        let start = i * image_shape;
+        let end = start + image_shape;
+        let image_data = images_data.data[start..end].to_vec(); // 0~784, 784~(784 * 2), (784 * 2)~(784 * 3) ...
+        images.push(Array2::from_shape_vec(shape, compute_normalize(image_data)).unwrap());
+    }
+
+    let mut ret: Vec<MnistImage> = vec::Vec::new();
+    for (img, lbl) in images.into_iter().zip(label_data.data.into_iter()) {
+        ret.push(MnistImage {
+            image: img,
+            label: lbl,
+        })
+    }
+    Ok(ret)
+}
+
+#[derive(Debug)]
+pub struct Batched {
+    pub images: Array2<f64>,
+    pub labels: vec::Vec<u8>,
+}
+
+impl Batched {
+    pub fn new(images: Array2<f64>, labels: vec::Vec<u8>) -> Self {
+        Batched {
+            images: images,
+            labels: labels,
+        }
+    }
+
+    pub fn batch_size(&self) -> usize {
+        self.labels.len()
+    }
+}
+
+/// Make batche from `MnistImage`.
+///
