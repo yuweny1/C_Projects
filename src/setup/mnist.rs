@@ -159,3 +159,38 @@ pub fn load_data(dataset_key: DatasetKey, normalize: bool) -> io::Result<vec::Ve
 
     let mnist = FetchClient::new(FConf::new(MNIST_SAVE_DIR, FILES.iter()))?;
     mnist.get()?;
+
+    let task = |key_idx: KeyFile, mnistl: FetchClient| -> io::Result<MnistData> {
+        println!(
+            "start to decode {}...",
+            FILES[key_idx.clone() as usize].fname
+        );
+        let ret = unarchive_mnist(&mnistl, FILES[key_idx.clone() as usize].fname);
+        println!("Complete to decode {}", FILES[key_idx as usize].fname);
+        ret
+    };
+
+    let mut rt = tokio::runtime::Runtime::new()?;
+    let res: io::Result<(io::Result<MnistData>, io::Result<MnistData>)> = rt.block_on(async move {
+        let label = dataset_key.label;
+        let img = dataset_key.img;
+        let mnistl = mnist.clone();
+        let res_label = tokio::spawn(async move { task(label, mnist) }).await?;
+        let res_data = tokio::spawn(async move { task(img, mnistl) }).await?;
+        Ok((res_label, res_data))
+    });
+    let (label, images) = res?;
+    let label_data = label?;
+    let images_data = images?;
+
+    let mut images: vec::Vec<Array2<f64>> = vec::Vec::new();
+    let image_shape = (images_data.sizes[1] * images_data.sizes[2]) as usize;
+    let compute_normalize: Box<dyn Fn(vec::Vec<u8>) -> vec::Vec<f64>> = if normalize {
+        Box::new(|img_data: vec::Vec<u8>| -> vec::Vec<f64> {
+            img_data.into_iter().map(|x| x as f64 / 255.).collect()
+        })
+    } else {
+        Box::new(|img_data: vec::Vec<u8>| -> vec::Vec<f64> {
+            img_data.into_iter().map(|x| x as f64).collect()
+        })
+    };
