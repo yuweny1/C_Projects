@@ -108,3 +108,47 @@ pub struct DirClient<'a> {
     /// Hash map with file name as key and related information as value
     pub file: HashMap<String, FileInfo<'a>>,
 }
+
+impl<'a> DirClient<'a> {
+    /// `DirClient` constructor
+    pub fn new<T>(cfg: FConf<'a, T>) -> io::Result<Self>
+    where
+        T: Iterator<Item = &'a RemoteFile<'a>> + ExactSizeIterator,
+    {
+        let mut current_path = env::current_dir()?;
+        current_path.push(cfg.save_dir_name);
+        let mut hash = HashMap::new();
+        for elem in cfg.remote_file {
+            hash.insert(
+                elem.fname.to_string(),
+                FileInfo {
+                    host_and_path: elem.host_and_path,
+                    sha256: elem.sha256,
+                    query: elem.query,
+                },
+            );
+        }
+        Ok(Self {
+            save_dir: current_path,
+            file: hash,
+        })
+    }
+
+    fn path(&self) -> &path::Path {
+        self.save_dir.as_path()
+    }
+
+    /// `file_path` creates the path of file x under
+    /// the current directory from the specified file
+    /// name x
+    pub fn file_path(&self, fname: &str) -> PathBuf {
+        self.save_dir.join(PathBuf::from(fname))
+    }
+
+    /// `create` creates directory
+    pub fn create(&self) -> io::Result<()> {
+        if !self.exists() {
+            return fs::create_dir(self.path());
+        }
+        Ok(())
+    }
