@@ -53,3 +53,58 @@ impl<'a> fmt::Display for RemoteFile<'a> {
 }
 
 impl<'a> RemoteFile<'a> {
+    /// `RemoteFile` constructor
+    pub fn new(host_and_path: &'a str, fname: &'a str, sha256: &'a str, query: &'a str) -> Self {
+        Self {
+            host_and_path: host_and_path,
+            fname: fname,
+            sha256: sha256,
+            query: query,
+        }
+    }
+}
+
+/// The structure to perform initialization setting of `FetchClient`
+pub struct FConf<'a, T>
+where
+    T: Iterator<Item = &'a RemoteFile<'a>> + ExactSizeIterator,
+{
+    /// Directory name
+    pub save_dir_name: &'a str,
+    /// Information of the file to be fetched
+    pub remote_file: T,
+}
+
+impl<'a, T> FConf<'a, T>
+where
+    T: Iterator<Item = &'a RemoteFile<'a>> + ExactSizeIterator,
+{
+    /// `FConf` constructor
+    pub fn new(save_dir_name: &'a str, rf: T) -> Self {
+        Self {
+            save_dir_name: save_dir_name,
+            remote_file: rf,
+        }
+    }
+}
+
+/// The `FileInfo`mation
+#[derive(Clone)]
+pub struct FileInfo<'a> {
+    /// Host name and its path
+    pub host_and_path: &'a str,
+    /// sha256 value of the file
+    pub sha256: &'a str,
+    /// query used to get the file
+    pub query: &'a str,
+}
+
+/// A type that executes the specified file existence check and creation,
+/// path resolution, etc.
+/// based on the save destination directory.
+#[derive(Clone)]
+pub struct DirClient<'a> {
+    save_dir: PathBuf,
+    /// Hash map with file name as key and related information as value
+    pub file: HashMap<String, FileInfo<'a>>,
+}
