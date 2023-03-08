@@ -234,3 +234,42 @@ impl Batched {
 
 /// Make batche from `MnistImage`.
 ///
+/// * `mnist_images` - mnist images
+/// * `bsize` - Specify the batch size. Batch size must be non-zero and divisible by data size (10000)
+pub fn batched(mnist_images: vec::Vec<MnistImage>, bsize: usize) -> io::Result<vec::Vec<Batched>> {
+    if bsize == 0 {
+        return Err(io::Error::new(
+            io::ErrorKind::Other,
+            "The batch size must be non-zero",
+        ));
+    } else if mnist_images.len() % bsize != 0 {
+        return Err(io::Error::new(
+            io::ErrorKind::Other,
+            format!(
+                "The batch size ({}) must be divisible by data size ({})",
+                bsize,
+                mnist_images.len()
+            ),
+        ));
+    }
+
+    let mut res: vec::Vec<Batched> = vec![];
+    let mut i = 0;
+
+    while i < mnist_images.len() {
+        let mut li = vec![];
+        let labels = mnist_images[i..i + bsize]
+            .iter()
+            .map(|x: &MnistImage| -> u8 {
+                li.push(x.image.view());
+                x.label
+            })
+            .collect::<Vec<u8>>();
+        res.push(Batched::new(
+            to_io(stack(Axis(0), &li), io::ErrorKind::Other)?,
+            labels,
+        ));
+        i += bsize;
+    }
+    Ok(res)
+}
