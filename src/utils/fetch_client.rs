@@ -152,3 +152,51 @@ impl<'a> DirClient<'a> {
         }
         Ok(())
     }
+
+    /// `file_create` creates file in directory
+    pub fn file_create(&self, dst: &str, src: &mut Bytes) -> io::Result<()> {
+        let mut out = File::create(self.file_path(dst))?;
+        out.write(&src)?;
+        Ok(())
+    }
+
+    /// `exists` checks if the specified directory exists
+    pub fn exists(&self) -> bool {
+        self.save_dir.exists()
+    }
+
+    /// `file_exists` checks if the specified file exists under the directory
+    pub fn file_exists(&self, fname: &str) -> bool {
+        self.file_path(fname).exists()
+    }
+
+    /// Delete the specified file under the directory
+    pub fn rm_file(&self, fname: &str) -> Result<(), Error> {
+        if self.exists() && self.file_exists(fname) {
+            if let Err(e) = fs::remove_file(self.file_path(fname)) {
+                Err(failure::format_err!("{}", e.to_string()))
+            } else {
+                Ok(())
+            }
+        } else {
+            Err(failure::format_err!("no such file"))
+        }
+    }
+}
+
+/// The downloader of file
+#[derive(Clone)]
+pub struct FetchClient<'a> {
+    /// directory client
+    pub dir_client: DirClient<'a>,
+}
+
+impl<'a> FetchClient<'a> {
+    /// `FetchClient` constructor
+    pub fn new<T>(cfg: FConf<'a, T>) -> io::Result<Self>
+    where
+        T: Iterator<Item = &'a RemoteFile<'a>> + ExactSizeIterator,
+    {
+        Ok(Self {
+            dir_client: DirClient::new(cfg)?,
+        })
