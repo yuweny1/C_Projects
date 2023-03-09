@@ -200,3 +200,45 @@ impl<'a> FetchClient<'a> {
         Ok(Self {
             dir_client: DirClient::new(cfg)?,
         })
+    }
+
+    fn is_exists(&self) -> io::Result<bool> {
+        Ok(self.dir_client.exists()
+            && self.dir_client.file.keys().fold(true, |acc, val| {
+                acc && (self.dir_client.file_exists(val) || {
+                    if let Ok(s) = remove_ext(val) {
+                        if let Some(s) = s.to_str() {
+                            self.dir_client.file_exists(&s.to_string())
+                        } else {
+                            false
+                        }
+                    } else {
+                        false
+                    }
+                })
+            }))
+    }
+
+    async fn fetch(&self, fname: &str) -> reqwest::Result<Option<bytes::Bytes>> {
+        if let Some(elem) = self.dir_client.file.get(fname) {
+            println!("Fetching {} from {}{}", fname, elem.host_and_path, fname);
+            let q = if elem.query.len() == 0 { "" } else { "?" };
+            Ok(Some(
+                reqwest::get(&(elem.host_and_path.to_owned() + fname + q + elem.query))
+                    .await?
+                    .bytes()
+                    .await?,
+            ))
+        } else {
+            Ok(None)
+        }
+    }
+
+    fn check_hash(&self, fname: &str, buf: &bytes::Bytes) -> io::Result<()> {
+        println!("Checking hash {}...", fname);
+
+        let mut sha256 = Sha256::new();
+        sha256.input(buf.as_ref());
+        if let Some(elem) = self.dir_client.file.get(fname) {
+            if elem.sha256 != sha256.result_str() {
+                return Err(io::Error::new(
