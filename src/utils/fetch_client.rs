@@ -242,3 +242,38 @@ impl<'a> FetchClient<'a> {
         if let Some(elem) = self.dir_client.file.get(fname) {
             if elem.sha256 != sha256.result_str() {
                 return Err(io::Error::new(
+                    io::ErrorKind::Other,
+                    "sha256 hash value does not match",
+                ));
+            } else {
+                println!("sha256 hash value of file {} matched", fname);
+                return Ok(());
+            }
+        }
+        Err(io::Error::new(
+            io::ErrorKind::NotFound,
+            "the specified file is invalid",
+        ))
+    }
+
+    /// `get` downloads and save files based on settings
+    pub fn get(&self) -> io::Result<()> {
+        if self.is_exists()? {
+            println!("the specified data is already saved.");
+            return Ok(());
+        }
+
+        println!("Start to download and setup data (only first time execute)...");
+
+        let mut rt = tokio::runtime::Runtime::new()?;
+        self.dir_client
+            .create()
+            .expect("failed to create directory");
+        rt.block_on(
+            stream::iter(self.dir_client.file.keys()).fold(Ok(()), |acc, kf| async move {
+                if let Err(_) = acc {
+                    acc
+                } else {
+                    match self.fetch(kf).await {
+                        Err(e) => Err(io::Error::new(io::ErrorKind::Other, e.to_string())),
+                        Ok(Some(mut s)) => {
