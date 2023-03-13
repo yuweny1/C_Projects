@@ -277,3 +277,16 @@ impl<'a> FetchClient<'a> {
                     match self.fetch(kf).await {
                         Err(e) => Err(io::Error::new(io::ErrorKind::Other, e.to_string())),
                         Ok(Some(mut s)) => {
+                            self.check_hash(kf, &s)?;
+                            self.dir_client.file_create(kf, &mut s)
+                        }
+                        Ok(None) => Err(io::Error::new(
+                            io::ErrorKind::Other,
+                            "the specified file is invalid",
+                        )),
+                    }
+                }
+            }),
+        )
+    }
+}
