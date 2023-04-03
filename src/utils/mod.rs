@@ -10,4 +10,5 @@ pub fn fst<T, U>(x: (T, U)) -> T {
 #[inline]
 pub fn snd<T, U>(x: (T, U)) -> U {
     let (_, y) = x;
-  
+    y
+}
